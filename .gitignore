@@ -1,0 +1,9 @@
+node_modules/
+build/
+coverage/
+.env
+.DS_Store
+downloads/
+*.log
+*.p8
+*.part-*

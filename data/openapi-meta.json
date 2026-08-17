@@ -1,0 +1,9 @@
+{
+  "title": "App Store Connect API",
+  "version": "4.4.1",
+  "openapi": "3.0.1",
+  "paths": 966,
+  "operations": 1263,
+  "source": "https://developer.apple.com/sample-code/app-store-connect/app-store-connect-openapi-specification.zip",
+  "file": "app-store-connect-openapi.json.gz"
+}

@@ -1,0 +1,63 @@
+{
+  "name": "app-store-connect-mcp",
+  "version": "0.1.0",
+  "description": "A comprehensive Model Context Protocol server for the App Store Connect API",
+  "type": "module",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "bin": {
+    "app-store-connect-mcp": "./build/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/server.d.ts",
+      "import": "./build/server.js"
+    }
+  },
+  "files": [
+    "build",
+    "data",
+    "scripts",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "dev": "tsx src/index.ts",
+    "dev:http": "tsx src/http.ts",
+    "start": "node build/index.js",
+    "start:http": "node build/http.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test",
+    "sync:openapi": "node scripts/sync-openapi.mjs",
+    "prepublishOnly": "npm run check && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "app-store-connect",
+    "apple",
+    "testflight"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "fflate": "^0.8.3",
+    "jose": "^6.2.9",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
